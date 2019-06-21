@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="colombia.json"></script>
+  <script type="text/javascript" src="namecities.js"></script>
+  <title>Selector de ciudades de Colombia</title>
+</head>
+<body>
+  <form>
+    <select id="department" onchange="namecities()" required>
+      <option selected disabled>Departamento</option>
+      <script>
+        var i
+        for (i=0;i<=31;i++){
+          var option = document.createElement('option');
+          option.innerHTML = data[i]["departamento"];
+          document.getElementById("department").appendChild(option);
+        }
+      </script>
+    </select>
+    <span id="city">
+      <select id="citychild">
+        <option selected disabled>Ciudad</option>
+      </select>
+    </span>
+  </form>
+</body>
+</html>
